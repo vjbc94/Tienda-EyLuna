@@ -1,3 +1,4 @@
+
 let nombreArticuloA = "Remera";
 let stockArticuloA = 40;
 let precioArticuloA = "500";
@@ -10,6 +11,11 @@ let nombreArticuloC = "Buzo";
 let stockArticuloC = 30;
 let precioArticuloC = "850";
 let metodos = "PagoFacil , MercadoP , Debito, Credito";
+
+
+
+
+
 
 
 let nombreUsurio = prompt("Hola nos prodrias indicar tu nombre");{
@@ -74,18 +80,51 @@ while(entrada != "Finalizar" ){
 console.log("Total venta realiazada a usuario " + nombreUsurio + ' por $' + precioTotalVenta  )
 
 alert("Muchas Gracias por elegirnos " + nombreUsurio +  ", El precio de su compra es " + '$' + precioTotalVenta);
+
+
+/* Arrays & Objetos */
+
+function Envios (nombreValor, precioValor){
+    this.nombre = nombreValor;
+    this.precio = precioValor;
+}
+
+let contador = 0
+let listadoEnvios = "Enviamos con estas empresas: "
+
+const EnviosA = new Envios("MercadoFlex", 450)
+const EnviosB = new Envios("PeYa", 450)
+
+
+const listaEnvios = [EnviosA, EnviosB]
+
+for(const envios of listaEnvios){
+    contador++
+    listadoEnvios += "\n" + contador + "- " + envios.nombre + " $" + envios.precio
+    console.log("envio mediante " + envios.nombre)
+}
+
+
+function listarEnvios(){
+    alert(listadoEnvios)
+}
+
+
 function metodo(){
     let opcion = prompt("Seleccione metodo de pago: \n1 - Efectivo \n2 - Debito/Credito \n3- MercadoP")
 
     switch(opcion){
         case "1":
-            efectivo();
+            efectivo()
+            listarEnvios();
             break;
         case "2":
             debito();
+            listarEnvios();
             break;
         case "3":
             MercadoP()
+            listarEnvios();
             break;
         default:
             alert("Eliga una opcion correcta")
@@ -112,4 +151,19 @@ function MercadoP(){
     console.log("Se acredito el pago de " + nombreUsurio + " por $" + precioTotalVenta)
 }
 
+
+
 metodo()
+
+/* Arrays & Objetos */
+
+const Direccion = [];
+let   cantidad     = 1;
+do{
+   let entrada = prompt("Ingresar Direccion de entrega");
+    console.log ("Direccion a enviar " + entrada);
+   Direccion.push(entrada.toUpperCase());
+}while(Direccion.length != cantidad)
+const compraFinalizada = Direccion.concat(["Sera enviado en el transcuro de 2 hs"]);
+alert(compraFinalizada.join("\n"));
+
