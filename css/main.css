@@ -1,12 +1,11 @@
 * {
-    margin: 0;
-    padding: 0; }
+  margin: 0;
+  padding: 0; }
 
-.inicio{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    background-size: cover;
-    color: white;
-}
+.inicio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  background-size: cover;
+  color: white; }
