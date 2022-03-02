@@ -221,19 +221,11 @@ function MercadoP(){
 
 menu()
 
-/* Finalizar compra */
-/* 
-let entrada = prompt("Indicar 'Finalizar' para terminar la compra");
-while(entrada != "Finalizar" ){
-    alert("El usuario ingresó "+ entrada);
-    entrada = prompt("Ingresar 'Finalizar' para terminar la operacion. Y realizar el pago");
-}
 
-console.log("Total venta realiazada a usuario " + nombreUsurio + ' por $' + precioTotalVenta  ) */
 
 /* Metodo de entrega */
 
-/* const Direccion = [];
+const Direccion = [];
 let   cantidad     = 1;
 do{
    let entrada = prompt("Ingresar Direccion de entrega o Retiro en tienda");
@@ -242,4 +234,13 @@ do{
 }while(Direccion.length != cantidad)
 const compraFinalizada = Direccion.concat(["En el transcurso de 2hs tu pedido estara listo para ser enviado o retirado"]);
 alert(compraFinalizada.join("\n"));
- */
+
+/* Finalizar compra */
+
+let entrada = prompt("Indicar 'Finalizar' para terminar la compra");
+while(entrada != "Finalizar" ){
+    alert("El usuario ingresó "+ entrada);
+    entrada = prompt("Ingresar 'Finalizar' para terminar la operacion. Y realizar el pago");
+}
+
+console.log("Total venta realiazada a usuario " + nombreUsurio + ' por $' + precioTotalVenta  )
