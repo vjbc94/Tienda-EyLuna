@@ -10,3 +10,23 @@
     background-size: cover;
     color: white;
 }
+
+.card{
+position: relative;
+display: flex;
+min-width: 0;
+word-wrap: break-word;
+background-clip: border-box;
+border: 1px solid rgba(0, 0, 0, 0.125);
+border-radius: 0.25rem;
+justify-content: space-around;
+align-items: center;
+flex-direction: row;
+    button{ 
+    width:  10%;
+    }
+    img{ 
+    width: 20%;
+    }
+}
+

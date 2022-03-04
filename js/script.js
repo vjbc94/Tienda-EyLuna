@@ -1,11 +1,11 @@
 /* Articulos */
 
 class Articulo { 
-    constructor(nombre, stock, precio){ 
+    constructor(nombre, stock, precio, imagenes){ 
         this.nombre = nombre;
         this.stock = stock;
         this.precio = precio;
-
+        this.imagenes = imagenes;
         this.venta = function(cantidadComprada){
             this.stock -= cantidadComprada
         }
@@ -16,11 +16,11 @@ class Articulo {
 let ArticulosMenu = "Productos en tienda"
 
 
-const articuloA = new Articulo ("remera", 50, 500)
-const articuloB = new Articulo ("jean", 50, 800)
-const articuloC = new Articulo ("buzo", 50, 750)
-const articuloD = new Articulo ("vestido", 50, 830)
-const articuloE = new Articulo ("campera", 50, 1500)
+const articuloA = new Articulo ("Remera", 50, 500, "./imagenes/remera.jpg")
+const articuloB = new Articulo ("Jean", 50, 800, "./imagenes/jean.jpg")
+const articuloC = new Articulo ("Buzo", 50, 750, "./imagenes/buzo.jpg")
+const articuloD = new Articulo ("Vestido", 50, 830, "./imagenes/vestido.jpg")
+const articuloE = new Articulo ("Campera", 50, 1500, "./imagenes/campera.jpg")
 
 
 const Articulos =  [articuloA, articuloB, articuloC, articuloD, articuloE ];
@@ -28,6 +28,21 @@ const menorPrecio = Articulos.filter(Articulo => Articulo.precio <= 750);
 const mayorPrecio = Articulos.filter(Articulo => Articulo.precio >= 790);
 console.log(menorPrecio);
 console.log(mayorPrecio);
+
+
+
+for (const Articulo of Articulos) {
+    let contenedor = document.createElement("section");
+
+    contenedor.innerHTML = `<section class="card">
+                            <h3>  ${Articulo.nombre}</h3>
+                            <h5 class="text-warning bg-dark"> $ ${Articulo.precio}</h5>
+                            <img src=${Articulo.imagenes} class="imagen"/>
+                            <button class="btn btn-outline-dark" > Comprar </button>
+                            </section>`
+    document.body.appendChild(contenedor);
+}
+
 
 
 for(const articulo of Articulos){
