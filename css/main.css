@@ -10,18 +10,16 @@
   background-size: cover;
   color: white; }
 
-.card {
-  position: relative;
+.ArticulosPantalla {
+  padding: 30px; }
+
+.card-articulo {
+  margin-top: 50px;
   display: flex;
-  min-width: 0;
-  word-wrap: break-word;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  flex-direction: row; }
-  .card button {
-    width: 10%; }
-  .card img {
-    width: 20%; }
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center; }
+  .card-articulo img {
+    width: 50%; }
