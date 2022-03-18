@@ -150,7 +150,7 @@ function mostrarProductos() {
                             <h3 id= "nombre">  ${Articulo.nombre}</h3>
                             <b>$${Articulo.precio}</b>
                             <p>Disponible: ${Articulo.stock} unidades</p>
-                            <button id="boton${Articulo.id}" type="button" class= "btn btn-primary" onclick="addToCart(${Articulo.precio},${Articulo.id},${Articulo.stock})"> COMPRAR </button>
+                            <button id="boton${Articulo.id}" type="button" class= "btn btn-outline-dark" onclick="addToCart(${Articulo.precio},${Articulo.id},${Articulo.stock})"> COMPRAR </button>
                             </div>`
         ArticulosPantalla.appendChild(contenedor);
     }
@@ -198,7 +198,7 @@ function addToCart(precio, id, stock) {
                 Articulo.venta(1);
 
                 precioTotalVenta = carrito.reduce((partialSum, a) => partialSum + a, 0);
-                impresorPrecios();
+                PrecioTotal();
                 mostrarProductos();
             } else {
                 stockInsuficiente(Articulo);
@@ -221,18 +221,21 @@ function stockInsuficiente(Articulo) {
 }
 
 /* Total de la venta */
-function PrecioPantalla() {
+function PrecioTotal() {
     let inputPrecio = document.querySelector(".total");
     inputPrecio.innerHTML = "";
 
     let contenedor = document.createElement("div");
 
     contenedor.innerHTML = `<div class="elTotal"">
-                            <b>Total agregado: $${precioTotalVenta}</b>`;
+                            <b>Total Agregado: $${precioTotalVenta}</b>`;
     inputPrecio.appendChild(contenedor);
 }
 
 mostrarProductos();
-PrecioPantalla();
+PrecioTotal();
 
 console.log(carrito);
+
+
+localStorage.setItem("listaDeArticulos", JSON.stringify(Articulos)) 

@@ -1,0 +1,52 @@
+
+.inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    background-size: cover;
+    color: white;
+}
+
+.navbar-brand{ 
+    font-family: 'Parisienne';
+    font-weight: 700;
+}
+
+h1{ 
+    font-family: 'Hurricane';
+    font-weight: 700;
+}
+
+
+.ArticulosPantalla{
+    padding: 30px;
+
+}
+
+.card-articulo{ 
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+
+    img{ 
+    width: 50%;
+}
+}
+
+
+
+
+.carrito{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(43, 65, 124);
+    border-radius: 0.25rem;
+    align-items: center;
+    font-size: 20px;
+}
