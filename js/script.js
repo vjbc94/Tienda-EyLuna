@@ -143,14 +143,21 @@ function mostrarProductos() {
     ArticulosPantalla.innerHTML = ''
 
     for (const Articulo of Articulos) {
+        let nombre = Articulo.nombre;
+        let imagenes = Articulo.imagenes;
+        let precio =  Articulo.precio;
+        let id = Articulo.id;
+        let stock = Articulo.stock;
+
+
         let contenedor = document.createElement("div");
 
         contenedor.innerHTML = `<div class="card-articulo border">
-                            <img src=${Articulo.imagenes} class="imagen"/>
-                            <h3 id= "nombre">  ${Articulo.nombre}</h3>
-                            <b>$${Articulo.precio}</b>
-                            <p>Disponible: ${Articulo.stock} unidades</p>
-                            <button id="boton${Articulo.id}" type="button" class= "btn btn-outline-dark" onclick="addToCart(${Articulo.precio},${Articulo.id},${Articulo.stock})"> COMPRAR </button>
+                            <img src=${imagenes} class="imagen"/>
+                            <h3 id= "nombre">  ${nombre}</h3>
+                            <b>$${precio}</b>
+                            <p>Disponible: ${stock} unidades</p>
+                            <button id="boton${id}" type="button" class= "btn btn-outline-dark" onclick="addToCart(${precio},${id},${stock})"> COMPRAR </button>
                             </div>`
         ArticulosPantalla.appendChild(contenedor);
     }
@@ -168,22 +175,25 @@ buzo.addEventListener('click', function () { renderProductos("buzo") })
 /* Articulos por categoria */
 function renderProductos(categoria) {
     let ArticulosPantalla = document.querySelector('.ArticulosPantalla')
-
     ArticulosPantalla.innerHTML = ''
-
     const productos = Articulos.filter(x => x.categoria == categoria)
     for (const Articulo of productos) {
+        let nombre = Articulo.nombre;
+        let imagenes = Articulo.imagenes;
+        let precio =  Articulo.precio;
+        let id = Articulo.id;
+        let stock = Articulo.stock;
+
+
         let contenedor = document.createElement("div");
 
-        contenedor.className = "card col-lg-3";
-        contenedor.id = Articulo.id;
-        contenedor.innerHTML = `
-                            <img src=${Articulo.imagenes} class="imagen"/>
-                            <h3 id= "nombre">  ${Articulo.nombre}</h3>
-                            <b>$${Articulo.precio}</b>
-                            <p>Quedan: ${Articulo.stock} unidades</p>
-                            <button id="boton${Articulo.id}" type="button" class= "btn btn-primary" onclick="addToCart(${Articulo.precio},${Articulo.id},${Articulo.stock})"> COMPRAR </button>
-                                `
+        contenedor.innerHTML = `<div class="card-articulo border">
+                            <img src=${imagenes} class="imagen"/>
+                            <h3 id= "nombre">  ${nombre}</h3>
+                            <b>$${precio}</b>
+                            <p>Disponible: ${stock} unidades</p>
+                            <button id="boton${id}" type="button" class= "btn btn-outline-dark" onclick="addToCart(${precio},${id},${stock})"> COMPRAR </button>
+                            </div>`
         ArticulosPantalla.appendChild(contenedor);
     }
 }
@@ -212,9 +222,7 @@ function addToCart(precio, id, stock) {
 function stockInsuficiente(Articulo) {
     let inputPrecio = document.querySelector(".total-2");
     inputPrecio.innerHTML = "";
-
     let contenedor = document.createElement("div");
-
     contenedor.innerHTML = `<div class="elTotal-2"">
                             <b>Stock Agotado de ${Articulo.nombre}</b>`;
     inputPrecio.appendChild(contenedor);
@@ -222,20 +230,35 @@ function stockInsuficiente(Articulo) {
 
 /* Total de la venta */
 function PrecioTotal() {
+    console.log('Total agregado ' + '$' + precioTotalVenta); //vale igual que precioTotalVenta
+
     let inputPrecio = document.querySelector(".total");
     inputPrecio.innerHTML = "";
-
     let contenedor = document.createElement("div");
-
     contenedor.innerHTML = `<div class="elTotal"">
                             <b>Total Agregado: $${precioTotalVenta}</b>`;
     inputPrecio.appendChild(contenedor);
 }
 
+/* Vaciar Carrito */
+
+function clearStorage() {
+    localStorage.clear();
+    PrecioTotal();
+    precioTotalVenta = carrito.reduce((partialRest, ) => - partialRest, 0);
+}
+
+function vaciarCarro() {
+    let vaciador = document.querySelector(".vaciarCarro");
+    vaciador.innerHTML = "";
+    vaciador.innerHTML = `<button id="vaciadorCarrito" type="button" class="btn btn-primary" onclick="clearStorage()">Vaciar carrito</button>`;
+}
+
+/* Por los momento para vaciar carrito tengo que clickear 2 veces, pero al agregar otro articulo aparece la sumatoria anterior */
+
 mostrarProductos();
 PrecioTotal();
-
+vaciarCarro();
 console.log(carrito);
-
 
 localStorage.setItem("listaDeArticulos", JSON.stringify(Articulos)) 

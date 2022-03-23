@@ -6,6 +6,7 @@
     background-color: black;
     background-size: cover;
     color: white;
+  /*   padding: 150px; */
 }
 
 .navbar-brand{ 
@@ -13,9 +14,45 @@
     font-weight: 700;
 }
 
-h1{ 
+
+h1{
     font-family: 'Hurricane';
     font-weight: 700;
+    font-size: 4rem;
+    text-align: center;
+}
+
+
+.bienvenidos{
+    animation-name: bienvenidos;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes bienvenidos {
+    0%{
+        transform: translate(30vw);
+    }
+
+    100%{
+        transform: translateX(0vw);
+    }
+}
+
+.eyluna{
+    animation-name: eyluna;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes eyluna {
+    0%{
+        transform: translate(-30vw);
+    }
+
+    100%{
+        transform: translateX(0vw);
+    }
 }
 
 
@@ -50,3 +87,14 @@ h1{
     align-items: center;
     font-size: 20px;
 }
+
+.pie{
+    display: flex;
+    background-color: black;
+    justify-content: space-evenly;
+    align-items: center;
+    p  { 
+    color: white
+}
+}
+
