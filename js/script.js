@@ -143,6 +143,7 @@ function mostrarProductos() {
     ArticulosPantalla.innerHTML = ''
 
     for (const Articulo of Articulos) {
+        /* Agregado desestructuracion */
         let nombre = Articulo.nombre;
         let imagenes = Articulo.imagenes;
         let precio =  Articulo.precio;
@@ -178,6 +179,7 @@ function renderProductos(categoria) {
     ArticulosPantalla.innerHTML = ''
     const productos = Articulos.filter(x => x.categoria == categoria)
     for (const Articulo of productos) {
+        /* Agregado desestructuracion */
         let nombre = Articulo.nombre;
         let imagenes = Articulo.imagenes;
         let precio =  Articulo.precio;
@@ -230,8 +232,7 @@ function stockInsuficiente(Articulo) {
 
 /* Total de la venta */
 function PrecioTotal() {
-    console.log('Total agregado ' + '$' + precioTotalVenta); //vale igual que precioTotalVenta
-
+    console.log('Total agregado ' + '$' + precioTotalVenta);
     let inputPrecio = document.querySelector(".total");
     inputPrecio.innerHTML = "";
     let contenedor = document.createElement("div");
