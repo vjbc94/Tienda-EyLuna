@@ -212,6 +212,7 @@ function addToCart(precio, id, stock) {
                 precioTotalVenta = carrito.reduce((partialSum, a) => partialSum + a, 0);
                 PrecioTotal();
                 mostrarProductos();
+                alertAgregado("Agregaste '" + Articulo.nombre + "' a tu carrito");
             } else {
                 stockInsuficiente(Articulo);
             }
@@ -247,6 +248,14 @@ function clearStorage() {
     localStorage.clear();
     PrecioTotal();
     precioTotalVenta = carrito.reduce((partialRest, ) => - partialRest, 0);
+    /* Agregado Sweeet */
+    Swal.fire({
+        title: 'ESTAS POR VACIAR CARRITO',
+        text: 'Aceptar para finalizar',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+    })
+    
 }
 
 function vaciarCarro() {
@@ -256,6 +265,21 @@ function vaciarCarro() {
 }
 
 /* Por los momento para vaciar carrito tengo que clickear 2 veces, pero al agregar otro articulo aparece la sumatoria anterior */
+
+
+/* Agregado Toastify */
+function alertAgregado(text) {
+	Toastify({
+		text,
+		duration: 3000,
+		position: "right",
+		style: {
+			background: "linear-gradient(to right, #00ff, #000)"
+		}
+	}).showToast();
+}
+
+
 
 mostrarProductos();
 PrecioTotal();
