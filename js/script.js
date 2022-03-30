@@ -1,6 +1,24 @@
 let cantidadComprada = 0;
 let precioTotalVenta = 0;
 
+/* AJAJ Y FETCH */
+const lista = document.querySelector('.gifs')
+
+fetch('/data.json')
+    .then( (res) => res.json())
+    .then( (data) => {
+
+        data.forEach((producto) => {
+            const div = document.createElement('div-oferta')
+            div.innerHTML = `<div class="oferta">
+            <img src=${producto.imagenes} class="imagen"/>
+            </div>`
+            lista.append(div)
+        })
+    })
+
+
+
 
 /* Estructura de Articulos */
 class Articulo {
@@ -143,7 +161,6 @@ function mostrarProductos() {
     ArticulosPantalla.innerHTML = ''
 
     for (const Articulo of Articulos) {
-        /* Agregado desestructuracion */
         let nombre = Articulo.nombre;
         let imagenes = Articulo.imagenes;
         let precio =  Articulo.precio;
@@ -246,8 +263,8 @@ function PrecioTotal() {
 
 function clearStorage() {
     localStorage.clear();
-    PrecioTotal();
     precioTotalVenta = carrito.reduce((partialRest, ) => - partialRest, 0);
+  
     /* Agregado Sweeet */
     Swal.fire({
         title: 'ESTAS POR VACIAR CARRITO',
@@ -255,7 +272,7 @@ function clearStorage() {
         icon: 'error',
         confirmButtonText: 'Aceptar'
     })
-    
+    PrecioTotal(); 
 }
 
 function vaciarCarro() {
@@ -278,6 +295,7 @@ function alertAgregado(text) {
 		}
 	}).showToast();
 }
+
 
 
 

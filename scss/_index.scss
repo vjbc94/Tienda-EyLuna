@@ -56,6 +56,17 @@ h1{
 }
 
 
+
+.oferta {
+    display: flex;
+    justify-content: center;
+.imagen {
+    width: 50%;
+    height: 200px;
+}
+}
+
+
 .ArticulosPantalla{
     padding: 30px;
 
@@ -86,6 +97,7 @@ h1{
     border-radius: 0.25rem;
     align-items: center;
     font-size: 18px;
+    bottom: 0;
 }
 
 .pie{
