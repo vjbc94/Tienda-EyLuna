@@ -4,7 +4,7 @@ let precioTotalVenta = 0;
 /* AJAJ Y FETCH */
 const lista = document.querySelector('.gifs')
 
-fetch('/data.json')
+fetch('../data.json')
     .then( (res) => res.json())
     .then( (data) => {
 
