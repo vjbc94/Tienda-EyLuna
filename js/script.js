@@ -8,7 +8,7 @@ fetch('../js/data.json')
     .then( (res) => res.json())
     .then( (data) => {
 
-        data.forEach((producto) => {
+        data.forEach(producto => {
             const div = document.createElement('div-oferta')
             div.innerHTML = `<div class="oferta">
             <img src=${producto.imagenes} class="imagen"/>
@@ -16,9 +16,6 @@ fetch('../js/data.json')
             lista.append(div)
         })
     })
-
-
-
 
 /* Estructura de Articulos */
 class Articulo {
