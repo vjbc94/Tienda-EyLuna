@@ -1,25 +1,9 @@
 let cantidadComprada = 0;
 let precioTotalVenta = 0;
-
-/* AJAJ Y FETCH */
-const lista = document.querySelector('.gifs')
-
-fetch('../js/data.json')
-    .then( (res) => res.json())
-    .then( (data) => {
-
-        data.forEach(producto => {
-            const div = document.createElement('div-oferta')
-            div.innerHTML = `<div class="oferta">
-            <img src=${producto.imagenes} class="imagen"/>
-            </div>`
-            lista.append(div)
-        })
-    })
+let listaProductos = [];
 
 /* Estructura de Articulos */
-class Articulo {
-    constructor(nombre, stock, precio, imagenes, categoria, id) {
+function Producto (nombre, stock, precio, imagenes, categoria, id) {
         this.nombre = nombre;
         this.stock = stock;
         this.precio = precio;
@@ -31,11 +15,33 @@ class Articulo {
             console.log("El stock remanente es de: " + this.stock + " " + this.nombre);
         };
     }
-}
+
+    fetch("../js/data.json")
+	.then(response => response.json())
+	.then(data => {
+		data.forEach(producto =>
+			listaProductos.push(
+				new Producto(
+					producto.nombre,
+                    producto.stock,
+					producto.precio,
+                    producto.imagenes,
+					producto.categoria,
+					producto.id,
+				)
+			)
+		);
+		mostrarProductos();
+		console.log(listaProductos);
+	});
+
+
+
+
 
 /* Articuloos Tienda */
 
-const articuloA = new Articulo(
+/* const articuloA = new Articulo(
     "Remera",
     50,
     500,
@@ -136,7 +142,7 @@ const articuloJ = new Articulo(
     10
 )
 
-const Articulos = [articuloA, articuloB, articuloC, articuloD, articuloE, articuloF, articuloG, articuloH, articuloI, articuloJ];
+const Articulos = [articuloA, articuloB, articuloC, articuloD, articuloE, articuloF, articuloG, articuloH, articuloI, articuloJ]; */
 const carrito = [];
 
 
@@ -157,12 +163,12 @@ function mostrarProductos() {
 
     ArticulosPantalla.innerHTML = ''
 
-    for (const Articulo of Articulos) {
-        let nombre = Articulo.nombre;
-        let imagenes = Articulo.imagenes;
-        let precio =  Articulo.precio;
-        let id = Articulo.id;
-        let stock = Articulo.stock;
+    for (const producto of listaProductos) {
+        let nombre = producto.nombre;
+        let imagenes = producto.imagenes;
+        let precio =  producto.precio;
+        let id = producto.id;
+        let stock = producto.stock;
 
 
         let contenedor = document.createElement("div");
@@ -217,11 +223,11 @@ function renderProductos(categoria) {
 /* Funcion Agregar carrito */
 
 function addToCart(precio, id, stock) {
-    for (const Articulo of Articulos) {
-        if (Articulo.id === id) {
+    for (const producto of listaProductos) {
+        if (producto.id === id) {
             if (stock > 0) {
                 carrito.push(precio);
-                Articulo.venta(1);
+                producto.venta(1);
 
                 precioTotalVenta = carrito.reduce((partialSum, a) => partialSum + a, 0);
                 PrecioTotal();
@@ -236,12 +242,12 @@ function addToCart(precio, id, stock) {
 
 /* Funcion Stock Insuficiente */
 
-function stockInsuficiente(Articulo) {
+function stockInsuficiente(producto) {
     let inputPrecio = document.querySelector(".total-2");
     inputPrecio.innerHTML = "";
     let contenedor = document.createElement("div");
     contenedor.innerHTML = `<div class="elTotal-2"">
-                            <b>Stock Agotado de ${Articulo.nombre}</b>`;
+                            <b>Stock Agotado de ${producto.nombre}</b>`;
     inputPrecio.appendChild(contenedor);
 }
 
