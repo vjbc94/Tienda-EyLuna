@@ -1,78 +1,25 @@
-
-.inicio{
+.inicio {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
     background-size: cover;
-    color: white;
-  /*   padding: 150px; */
-}
-
-.navbar-brand{ 
-    font-family: 'Parisienne';
-    font-weight: 700;
-}
-
-
-h1{
-    font-family: 'Hurricane';
-    font-weight: 700;
-    font-size: 4rem;
+    .fs-1{
+    font-weight: 400;
     text-align: center;
-}
-
-
-.bienvenidos{
-    animation-name: bienvenidos;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-}
-
-@keyframes bienvenidos {
-    0%{
-        transform: translate(30vw);
-    }
-
-    100%{
-        transform: translateX(0vw);
-    }
-}
-
-.eyluna{
-    animation-name: eyluna;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-}
-
-@keyframes eyluna {
-    0%{
-        transform: translate(-30vw);
-    }
-
-    100%{
-        transform: translateX(0vw);
-    }
-}
-
-
-
-.oferta {
-    display: flex;
-    justify-content: center;
-.imagen {
-    width: 50%;
-    height: 200px;
+    position: absolute;
+    color: #fffd47;
+    margin-bottom: 20px;
 }
 }
 
 
-.ArticulosPantalla{
-    padding: 30px;
 
+.eyluna{ 
+    width: 100%;
 }
 
-.card-articulo{ 
+.card-articulo {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -81,16 +28,19 @@ h1{
     align-content: space-around;
     justify-content: center;
 
-    img{ 
-    width: 50%;
+    img {
+        width: 100%;
+    }
 }
+
+.compra {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-
-
-
-.carrito{
-    position: fixed;
+.carrito {
     display: flex;
     flex-direction: column;
     border: 2px solid rgb(43, 65, 124);
@@ -100,13 +50,12 @@ h1{
     bottom: 0;
 }
 
-.pie{
+.pie {
     display: flex;
     background-color: black;
-    justify-content: space-evenly;
-    align-items: center;
-    p  { 
-    color: white
+    justify-content: space-between;
+    p {
+        color: white;
+        margin-left: 25px;
+    }
 }
-}
-

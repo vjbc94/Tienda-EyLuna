@@ -4475,11 +4475,11 @@ textarea.form-control-lg {
   color: #fff;
 }
 .navbar-dark .navbar-toggler {
-  color: #0d6efd;
-  border-color: #0d6efd;
+ /*  color: #0d6efd;
+  border-color: #0d6efd; */
 }
 .navbar-dark .navbar-toggler-icon {
-  background-image: url(https://i.ibb.co/ysdpXZv/engranajes.png);
+  background-image: url(https://i.ibb.co/F7018v3/moda-1.png);
 }
 .navbar-dark .navbar-text {
   color: rgba(255, 255, 255, 0.55);
@@ -11212,7 +11212,7 @@ textarea.form-control-lg {
 }
 @media (min-width: 1200px) {
   .fs-1 {
-    font-size: 2.5rem !important;
+    font-size: 2.5rem
   }
 
   .fs-2 {

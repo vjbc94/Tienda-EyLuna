@@ -1,0 +1,91 @@
+@media screen and (min-width:768px){
+
+    
+.inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    .fs-1{
+        font-weight: 400;
+        font-size: 50px;
+        text-align: center;
+        position: absolute;
+        color: #fffd47;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+.bienvenidos{
+    animation-name: bienvenidos;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes bienvenidos {
+    0%{
+        transform: translate(30vw);
+    }
+
+    100%{
+        transform: translateX(0vw);
+    }
+}
+
+.eyluna{
+    animation-name: eyluna;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    width: 100%;
+}
+
+@keyframes eyluna {
+    0%{
+        transform: translate(-30vw);
+    }
+
+    100%{
+        transform: translateX(0vw);
+    }
+}
+
+.card-articulo{ 
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+
+    img{ 
+    width: 50%;
+}
+}
+.compra {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.carrito{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(43, 65, 124);
+    border-radius: 0.25rem;
+    align-items: center;
+    font-size: 18px;
+    bottom: 0;
+}
+
+.pie{
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    p  { 
+    color: white
+}
+}
+}

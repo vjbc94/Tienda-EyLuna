@@ -1,8 +1,74 @@
 [
-    { "nombre": "Remera",
+    {
+        "nombre": "Remera",
         "stock": 50,
-        "precio":500,
-        "imagenes" :"./imagenes/remera.jpg",
-        "categoria":"remera",
-        "id":1}
+        "precio": 500,
+        "imagenes": "./imagenes/remera.jpg",
+        "categoria": "remera",
+        "id": 1
+    },
+    {
+        "nombre": "Jean",
+        "stock": 50,
+        "precio": 800,
+        "imagenes": "./imagenes/jean.jpg",
+        "categoria": "jean",
+        "id": 2
+    },
+    {
+        "nombre": "Buzo",
+        "stock": 50,
+        "precio": 750,
+        "imagenes": "./imagenes/buzo.jpg",
+        "categoria": "buzo",
+        "id": 3
+    },
+    {
+        "nombre": "Vestido",
+        "stock": 50,
+        "precio": 830,
+        "imagenes": "./imagenes/vestido.jpg",
+        "categoria": "vestido",
+        "id": 4
+    },
+    {
+        "nombre": "Remera Top",
+        "stock": 50,
+        "precio": 500,
+        "imagenes": "./imagenes/remera-top.jpg",
+        "categoria": "remera",
+        "id": 5
+    },
+    {
+        "nombre": "Buzo Negro",
+        "stock": 50,
+        "precio": 750,
+        "imagenes": "./imagenes/buzo-negro.jpg",
+        "categoria": "buzo",
+        "id": 6
+    },
+    {
+        "nombre": "Jean Dama",
+        "stock": 50,
+        "precio": 800,
+        "imagenes": "./imagenes/jean-dama.jpg",
+        "categoria": "jean",
+        "id": 7
+    },
+    {
+        "nombre": "Vestido Blanco",
+        "stock": 50,
+        "precio": 830,
+        "imagenes": "./imagenes/vestodo-blanco.png",
+        "categoria": "vestido",
+        "id": 8
+    },
+    {
+        "nombre": "Campera",
+        "stock": 50,
+        "precio": 1500,
+        "imagenes": "./imagenes/campera.jpg",
+        "categoria": "campera",
+        "id": 9
+    }
 ]
