@@ -307,4 +307,4 @@ PrecioTotal();
 vaciarCarro();
 console.log(carrito);
 
-localStorage.setItem("listaDeArticulos", JSON.stringify(Articulos)) 
+localStorage.setItem("listaDeArticulos", JSON.stringify(productos)) 
