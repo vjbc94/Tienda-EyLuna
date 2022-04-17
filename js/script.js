@@ -16,7 +16,7 @@ function Producto (nombre, stock, precio, imagenes, categoria, id) {
         };
     }
 
-    fetch("../js/data.json")
+    fetch("../data.json")
 	.then(response => response.json())
 	.then(data => {
 		data.forEach(producto =>
