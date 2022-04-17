@@ -1,8 +1,8 @@
- [
+[
     { "nombre": "Remera",
         "stock": 50,
         "precio":500,
         "imagenes" :"../imagenes/remera.jpg",
-         "categoria":"remera",
+        "categoria":"remera",
         "id":1}
 ]
